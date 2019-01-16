@@ -38,4 +38,6 @@ let nextOne = document.getElementById('first-next-line');
 let nextTwo = document.getElementById('second-next-line');
 let nextThree = document.getElementById('third-next-line');
 let startOver = document.getElementById('fourth-next-line');
-// --------------------------------------------
+
+// This variable stores the '-END' lyric element
+let lastLyric = document.getElementById('column-optional');
