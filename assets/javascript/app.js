@@ -8,11 +8,28 @@ keys.forEach(function(key){
 })
 //---------------------------------------------
 // Functions that change the color of the keys below
-let keyPlay = function(event) {
+const keyPlay = function(event) {
   event.target.style.backgroundColor = '#75ffe1';
 }
 // returns the background color of the keys to their default with an empty string '' when the mouse is released on the element
-let keyReturn = function(event) {
+const keyReturn = function(event) {
   event.target.style.backgroundColor = '';
 }
+// --------------------------------------------
+// Loop that runs the array elements through the function
+  //*** you can't just assign it to equal keyPlay
+  // wrong-> note.onmousedown = keyPlay 
+  // because it would just redefined the function here
+  // instead passed in anonymous function that has an event that triggers the function keyPlay
+const  eventAssignment = function(note) {
+	note.onmousedown = function() {
+		keyPlay(event);
+	}
+	note.onmouseup = function() {
+		keyReturn(event);
+	}
+};
+
+// Loop that runs the array elements through the function
+notes.forEach(eventAssignment);
 // --------------------------------------------
