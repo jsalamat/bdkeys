@@ -22,12 +22,12 @@ const keyReturn = function(event) {
   // because it would just redefined the function here
   // instead passed in anonymous function that has an event that triggers the function keyPlay
 const  eventAssignment = function(note) {
-	note.onmousedown = function() {
-		keyPlay(event);
-	}
-	note.onmouseup = function() {
-		keyReturn(event);
-	}
+  note.onmousedown = function() {
+    keyPlay(event);
+  }
+  note.onmouseup = function() {
+    keyReturn(event);
+  }
 };
 
 // Loop that runs the array elements through the function
@@ -92,4 +92,22 @@ nextThree.onclick = function() {
   document.getElementById('letter-note-six').innerHTML = 'C';
   
   lastLyric.style.display = 'none';
+}
+
+// This is the event handler property and function for the startOver button
+startOver.onclick = function() {
+  nextOne.hidden = false;
+  startOver.hidden = true;
+   document.getElementById('word-one').innerHTML = 'HAP-';
+  document.getElementById('letter-note-one').innerHTML = 'G';
+  document.getElementById('word-two').innerHTML = 'PY';
+  document.getElementById('letter-note-two').innerHTML = 'G';
+  document.getElementById('word-three').innerHTML = 'BIRTH-';
+  document.getElementById('letter-note-three').innerHTML = 'A';
+  document.getElementById('word-four').innerHTML = 'DAY';
+  document.getElementById('letter-note-four').innerHTML = 'G';
+  document.getElementById('word-five').innerHTML = 'TO';
+  document.getElementById('letter-note-five').innerHTML = 'C';
+  document.getElementById('word-six').innerHTML = 'YOU!';
+  document.getElementById('letter-note-six').innerHTML = 'B';
 }
